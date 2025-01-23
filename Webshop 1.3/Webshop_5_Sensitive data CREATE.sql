@@ -1,4 +1,4 @@
-
+SET SQL_SAFE_UPDATES = 0;
 CREATE DATABASE IF NOT EXISTS sensitive_data;
 
 USE sensitive_data;
@@ -66,3 +66,5 @@ BEGIN
 END//
 
 DELIMITER ;
+
+SET SQL_SAFE_UPDATES = 1;
