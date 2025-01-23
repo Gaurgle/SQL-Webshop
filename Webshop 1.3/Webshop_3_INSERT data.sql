@@ -234,3 +234,5 @@ INSERT INTO model_categories (model_id, category_id) VALUES
 	(33, 5), (33, 7);
 
 
+SET SQL_SAFE_UPDATES = 1;
+
