@@ -81,9 +81,9 @@ CREATE TABLE model_categories (
         ON DELETE CASCADE
 );
 
--- Index över pingisskor
+-- Index Table tennis shoes 
 CREATE INDEX idx_table_tennis ON shoe_categories(category_name);
 
--- Index över produkter sålda 2024
+-- Index sold products 2024
 CREATE INDEX idx_orders_order_date ON orders(order_date);
 
