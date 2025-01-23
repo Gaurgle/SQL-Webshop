@@ -85,7 +85,7 @@ ORDER BY Total_Sales DESC
 LIMIT 1;
 
 -- 7 IDX
-	-- Pingisskor:
+	-- Table tennis shoes:
 SELECT 
     models.model_name, 
     shoes.price,
@@ -100,7 +100,7 @@ JOIN shoe_categories
 	ON model_categories.category_id = shoe_categories.category_id
 WHERE shoe_categories.category_name = 'Table Tennis';
 	
-    -- Produkter sålda 2024:
+    -- Products sold 2024:
 SELECT * 
 FROM orders 
 JOIN models
