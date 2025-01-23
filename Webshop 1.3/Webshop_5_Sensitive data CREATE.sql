@@ -6,16 +6,16 @@ USE sensitive_data;
 CREATE TABLE IF NOT EXISTS credentials (
     credential_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
-    password VARCHAR(255) NOT NULL, -- Lösenord
-    credit_card_encrypted VARBINARY(255), -- Krypterat kreditkortsnummer
+    password VARCHAR(255) NOT NULL, 
+    credit_card_encrypted VARBINARY(255), -- encrypted credentials
     FOREIGN KEY (customer_id) REFERENCES Webshop.customers(customer_id)
         ON DELETE CASCADE
 );
 
--- Skapar PlebbAnvändare (anställd)
+-- Create employee user
 CREATE USER IF NOT EXISTS 'Employee'@'localhost' IDENTIFIED BY 'plebbPassword';
 
--- Ger rättigheter för plebs till webshot, förutom sensitive_information
+-- Grants R/W for employee's, exc. sensitive_information
 GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.customers TO 'Employee'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.orders TO 'Employee'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.brands TO 'Employee'@'localhost';
@@ -25,10 +25,10 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.orders TO 'Employee'@'localhost'
 GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.shoe_categories TO 'Employee'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON webshop.shoes TO 'Employee'@'localhost';
 
--- Skapa Admin
+-- Create admin user
 CREATE USER IF NOT EXISTS 'Admin'@'localhost' IDENTIFIED BY 'bossPassword';
 
--- Ger rättigheter till allt för bossen
+-- Granted R/W for all files
 GRANT ALL PRIVILEGES ON webshop.* TO 'Admin'@'localhost';
 GRANT ALL PRIVILEGES ON sensitive_data.* TO 'Admin'@'localhost';
 
@@ -48,7 +48,7 @@ USE Webshop;
 
 DELIMITER //
 
--- Create Trigger After Customer Insert
+-- Create trigger after customer insert
 CREATE TRIGGER after_customer_insert
 AFTER INSERT ON customers
 FOR EACH ROW
