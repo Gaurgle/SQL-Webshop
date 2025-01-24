@@ -29,7 +29,7 @@ WHERE customer_id = 3;
 -- all customers credentials (BLOB):
 SELECT 
 	webshop.customers.first_name as first_name, 
-	customers.last_name as last_name, 
+	webshop.customers.last_name as last_name, 
     sensitive_data.credentials.password as password, 
     sensitive_data.credentials.credit_card_encrypted
 FROM webshop.customers
