@@ -148,7 +148,7 @@ INSERT INTO shoes (model_id, color, size, price, units_in_stock, sex) VALUES
 
 -- Customers
 INSERT INTO customers (first_name, last_name, pnr, address, city, email, phone_number) VALUES
-	('Andreas', 'Roos', '19900313-1512', 'Högalidsgatan 40D', 'Stockholm', 'andreas.roos@yh.nackademin.se', '0763060692'),
+	('Andreas', 'Roos', '19990313-1309', 'Rönnebygatan 1', 'Stockholm', 'andreas.roos@yh.nackademin.se', '0764079420'),
 	('Bob', 'Berg', '19850615-5678', 'Gatan 2', 'Göteborg', 'bob@example.com', '0735556543'),
 	('Alice', 'Andersson', '19900101-1234', 'Vägen 1', 'Stockholm', 'alice@example.com', '0705554567'),
 	('Adam', 'Lännerholm', '19910202-4321', 'Viken 21', 'Eksjö', 'adam@hotmail.com', '0700006352'),
